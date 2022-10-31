@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import { GET_DAYS_UNPAID } from "./query";
 import { Text, View } from "react-native";
+import { useQuery } from "@apollo/client";
 import { ColorRing } from "react-loader-spinner";
 import * as React from "react";
 import { Paid } from "./paid.js";
@@ -16,11 +17,12 @@ function checkPaidStatus(workers) {
 function App() {
   const [paid, setPaid] = React.useState(false);
 
-  const { loading, error, data } = useQuery(query.GET_CHECKINS, {
+  const { loading, error, data } = useQuery(GET_DAYS_UNPAID, {
     onCompleted: () => {
       // setWorkers(data.checkIns);
       //checkPaidStatus(workers);
       console.log(data);
+      setPaid(true);
     },
   });
 
