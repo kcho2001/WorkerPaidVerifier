@@ -1,14 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { ApolloProvider } from "@apollo/client";
+import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+// Initialize Apollo Client
+export const client = new ApolloClient({
+  uri: "https://api.thegraph.com/subgraphs/name/jossduff/coffee-subgraph",
+  cache: new InMemoryCache(),
+});
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
   </React.StrictMode>
 );
 
