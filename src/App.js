@@ -7,7 +7,7 @@ import * as React from "react";
 import { Paid } from "./paid.js";
 import { Unpaid } from "./unpaid.js";
 import useWindowDimensions from "./hooks/windowDimensions";
-// import { styles } from "./styles.js";
+import { styles } from "./styles.js";
 
 function checkPaidStatus(workers) {
   for (let worker of workers) {
@@ -34,7 +34,7 @@ function App() {
   return (
     <>
       {loading && (
-        <View styles={{ justifyContent: "center", alignItems: "center" }}>
+        <View styles={styles.screen}>
           <ColorRing
             visible={true}
             height={height / 2}
@@ -58,55 +58,3 @@ function App() {
 }
 
 export default App;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-  },
-  screen: {
-    flex: "1",
-    alignItems: "center",
-    justifyContent: "center",
-    paddingTop: 1,
-  },
-  mainText: {
-    fontSize: 20,
-    color: "black",
-    paddingBottom: 5,
-    paddingTop: 0,
-    marginTop: 0,
-  },
-  content: {
-    padding: 30,
-  },
-  list: {
-    marginTop: 0,
-  },
-  bottom: {
-    flex: 1,
-    justifyContent: "flex-end",
-    alignItems: "center",
-    padding: 20,
-  },
-  buttonStyle: {
-    backgroundColor: "#3399FF",
-    borderWidth: 0,
-    color: "#FFFFFF",
-    borderColor: "#3399FF",
-    height: 40,
-    alignItems: "center",
-    borderRadius: 30,
-    marginLeft: 35,
-    marginRight: 35,
-    marginTop: 10,
-    marginBottom: 10,
-  },
-  buttonTextStyle: {
-    color: "#FFFFFF",
-    paddingVertical: 10,
-    paddingHorizontal: 15,
-    fontSize: 16,
-    fontWeight: "600",
-  },
-});
