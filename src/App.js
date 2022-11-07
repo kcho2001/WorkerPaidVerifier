@@ -34,7 +34,7 @@ function App() {
   return (
     <>
       {loading && (
-        <View styles={styles.screen}>
+        <div>
           <ColorRing
             visible={true}
             height={height / 2}
@@ -44,12 +44,12 @@ function App() {
             wrapperClass="blocks-wrapper"
             colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
           />
-        </View>
+        </div>
       )}
       {error && (
-        <View>
-          <Text>Error retrieving data: {error.message}</Text>
-        </View>
+        <div>
+          <p>Error retrieving data: {error.message}</p>
+        </div>
       )}
       {!error && !loading && !paid && <Unpaid />}
       {!error && !loading && paid && <Paid />}
