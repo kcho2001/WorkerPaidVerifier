@@ -1,9 +1,9 @@
-import { Button, Image, StyleSheet, Text, View } from "react-native";
+import { styles } from "./styles";
 
 export function Paid() {
   return (
-    <View>
-      <Text>Paid</Text>
-    </View>
+    <div>
+      <p>Paid</p>
+    </div>
   );
 }
