@@ -22,14 +22,23 @@ code {
 }
 
 .dashboard {
-  border-radius: 20%;
-  width: 80%;
-  height: 80%;
-  position: 'absolute';
-  background-color: white;
+  width: 100%;
+  height: 80vh;
+  position: relative;
+  justify-self: center;
+  align-self: center;
   font-size: larger;
-  padding-left:50px;
-  padding-right:50px;
+  /* padding-left: 50px;
+  padding-right: 50px; */
+}
+
+.content {
+  width: 75%;
+  height: 90%;
+  justify-self: center;
+  align-self: center;
+  background-color: white;
+  border-radius: 20%;
 }
 
 /* p.header {
@@ -52,6 +61,6 @@ p.header {
   display: inline-block;
   text-align: center;
   font-weight: bolder;
-  font-size:larger;
+  font-size: larger;
   text-decoration: underline;
 }
