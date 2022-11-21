@@ -9,41 +9,38 @@ body {
 }
 
 code {
-  font-family: sans-serif,source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: sans-serif, source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-.grid-layout {  display: grid;
-  grid-template-columns: 0.1fr 2.6fr 0.1fr;
-  grid-template-rows: flex flex flex flex;
-  gap: 0px 0px;
-  grid-auto-flow: auto;
-  grid-template-areas:
-    "Header Header Header"
-    "Photos Photos Photos"
-    "Left-Sidebar Verified-Dashboard Right-Sidebar"
-    "Left-Sidebar About-Us Right-Sidebar";
-  width: 100vw;
-  height:auto;
-  overflow-y:auto;
-  background-color: #1C2E4A;
-  
-  /* #8AAAE5 */
-}
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100vw;
+  min-width: 0;
+  position: relative;
+  margin: auto;
+  display: flex;
+  padding-top: 1%;
+  padding-bottom: 1%;
 
-.Photos { grid-area: Photos;
-  position: relative; 
-  width: 100vw;
-  height: fit-content;
 }
 
 .photoSlide {
-  display: none; 
-  height:auto; 
-  justify-content:center; 
+  height: auto;
   align-self: center;
-  padding-left: 5%;
-  padding-right: 5%;
+  min-width: 0;
+  flex: 1;
+  max-width: 100vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img {
+  width: 100%;
+  height: 85vh;
+  opacity: .5;
+  flex: 1;
+  /* display: block; */
 }
 
 .photo-text {
@@ -61,28 +58,32 @@ code {
 .header-text {
   display: inline-block;
   font-weight: bolder;
-  font-size:larger;
+  font-size: larger;
 }
 
-.Verified-Dashboard { 
-  grid-area: Verified-Dashboard;
+.Verified-Dashboard {
   position: relative;
+  /* height: 100%; */
+  width: 50%;
 }
 
-.About-Us { 
-  grid-area: About-Us; 
+.About-Us {
   position: relative;
+  /* height: 100%; */
+  width: 50%;
 }
 
-.Left-Sidebar { grid-area: Left-Sidebar; background-color: #1C2E4A; }
+.Header {
+  height: 8vh;
+  width: 100%;
+  background-color: rgb(82, 81, 81);
+  position: relative;
+  flex: 1;
+}
 
-.Right-Sidebar { grid-area: Right-Sidebar; background-color: #1C2E4A; }
-
-.Header { 
-  grid-area: Header; 
-  height: 100%; 
-  width: 100%; 
-  background-color: rgb(82, 81, 81); 
+.Photos {
+  height: 92vh;
+  width: 100%;
   position: relative;
 }
 
@@ -91,44 +92,14 @@ code {
   animation-name: fade;
   animation-duration: 1.5s;
 }
+
 @keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@media only screen and (max-width: 768px) {
-  .grid-layout {  display: grid;
-    grid-template-columns: 0.1fr 2.6fr 0.1fr;
-    grid-template-rows: flex flex flex flex;
-    gap: 0px 0px;
-    grid-template-areas:
-      "Header Header Header"
-      "Photos Photos Photos"
-      "Left-Sidebar Verified-Dashboard Right-Sidebar"
-      "Left-Sidebar About-Us Right-Sidebar";
-    width: 100vw;
-    height: auto;
-    background-color: #1C2E4A;
-    overflow-y:auto;
+  from {
+    opacity: .4
   }
 
-  .Photos { grid-area: Photos;
-    position: relative; 
-    width:100%;
-    height: fit-content;    
-  }
-
-  .photoSlide {
-    display: none; 
-    width: 100vw;
-    height: fit-content; 
-    justify-content:center; 
-    align-self: center;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
+  to {
+    opacity: 1
   }
 }
 
@@ -143,27 +114,82 @@ code {
   transition: background-color 0.6s ease;
 }
 
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 1000px) {
+  img {
+    width: 100%;
+    height: 85vh;
+    opacity: .5;
+    flex: 1;
+    overflow-x: hidden;
+    /* display: block; */
+  }
+
+  .Verified-Dashboard {
+    position: relative;
+    /* height: 100%; */
+    width: 100%;
+  }
+
+  .About-Us {
+    position: relative;
+    /* height: 100%; */
+    width: 100%;
+  }
+
+  .flexRow {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contentScroll {
+    scroll-snap-align: start;
+    height: 100vh;
+  }
+}
+
+.contentScroll {
+  scroll-snap-align: start;
+  height: 100%;
+}
+
 /* Allows associated dot to be put as active when picture is up */
 .active {
   background-color: #717171;
-}
-
-img {
-  vertical-align: middle; 
-  object-fit: contain;
-  width:100%;
-  justify-content: center;
-  height: 100vh;
-  opacity: .5;
 }
 
 img:hover {
   opacity: 1.0;
 }
 
-/* Slideshow container */
-.slideshow-container {
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+}
+
+.dashboard {
   width: 100%;
+  height: 80vh;
   position: relative;
-  margin: auto;
+  justify-self: center;
+  align-self: center;
+  font-size: larger;
+  /* padding-left: 50px;
+  padding-right: 50px; */
+}
+
+.content {
+  width: 75%;
+  height: 90%;
+  justify-self: center;
+  align-self: center;
+  background-color: white;
+  border-radius: 20%;
 }
