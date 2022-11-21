@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="stylesheet" href="./index.css" />
-    <link rel="stylesheet" href="./../src/index.css" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="stylesheet" href="./index.css" />
+  <link rel="stylesheet" href="./../src/index.css" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -26,89 +24,124 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Paid Verifier</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <!-- Section will set the layout of the HTML to be in a grid format -->
-    <section class="grid-layout">
-      <div class="Header">
-        <div style="height:100%; border-width: 20px;"><p class="header-text" style="color:#192841; margin-left: 20px;">ChainBytes </p><p class="header-text" style="color:black;"> X </p><p  class="header-text" style="color:#453124;"> Lehigh</p></div>
+  <title>Paid Verifier</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <!-- Section will set the layout of the HTML to be in a grid format -->
+  <div
+    style="flex-direction: column; display: flex; background-color: #1C2E4A; scroll-snap-type: y proximity; height: 100vh; overflow-y: scroll;">
+    <section style="scroll-snap-align: start; height:100%">
+      <div class="Header" style="flex: 1">
+        <div style="height:100%; border-width: 20px;">
+          <p class="header-text" style="color:#192841; margin-left: 20px;">ChainBytes </p>
+          <p class="header-text" style="color:black;"> X </p>
+          <p class="header-text" style="color:#453124;"> Lehigh</p>
+        </div>
       </div>
-      <div class="Left-Sidebar"></div>
-      <div class="Right-Sidebar"></div>
-      <div class="Photos" style="background-color: black;">
-        <!-- <div class="slideshow-container"> -->
-          <div class="photoSlide fade">
-            <img src="photos/1.jpg">
-          </div>
-          
-          <div class="photoSlide fade">
-            <img src="photos/2.jpeg">
-          </div>
-          
-          <div class="photoSlide fade">
-            <img src="photos/3.jpg">
+      <div style="flex: 1;">
+        <div class="Photos" style="background-color: black;">
+          <!-- <div class="slideshow-container"> -->
+          <div class="slideshow-container">
+            <!-- TODO: Add modified versions of pictures so resolution comes out good for phone usage -->
+            <picture class="photoSlide fade">
+              <source media="(min-width: 400px)" srcset="" alt="">
+              <img src="photos/1.jpg" alt="">
+            </picture>
+
+
+            <picture class="photoSlide fade">
+              <source media="(max-width: 400px)" srcset="" alt="">
+              <img src="photos/2.jpeg">
+            </picture>
+
+            <picture class="photoSlide fade">
+              <source media="(max-width: 400px)" srcset="" alt="">
+              <img src="photos/3.jpg">
+            </picture>
+
+            <picture class="photoSlide fade">
+              <source media="(max-width: 400px)" srcset="" alt="">
+              <img src="photos/4.png">
+            </picture>
+
+            <picture class="photoSlide fade">
+              <source media="(max-width: 400px)" srcset="" alt="">
+              <img src="photos/5.png">
+            </picture>
           </div>
 
-          <div class="photoSlide fade">
-            <img src="photos/4.png">
+
+
+          <div style="text-align:center; background-color: rgb(82, 81, 81);">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
           </div>
 
-          <div class="photoSlide fade">
-            <img src="photos/5.png">
-          </div>
-                    
-          <div style="text-align:center; width:100vw; background-color: rgb(82, 81, 81);">
-            <span class="dot"></span> 
-            <span class="dot"></span> 
-            <span class="dot"></span> 
-            <span class="dot"></span> 
-            <span class="dot"></span> 
-          </div>
-          
           <div class="photo-text">Café Justo</div>
+        </div>
       </div>
-      <br/>
-      <div class="Verified-Dashboard" id="root"></div>
-      <div class="About-Us center">
-        <div class="dashboard">
-          <div style="text-align: center">
-            <p class="header">About </p>
-            <p class="header" style="color:#192841;"> ChainBytes </p><p class="header" style="color:black;"> X </p><p  class="header" style="color:#453124;"> Lehigh</p>
-            <p>
-              El Salvador’s economy relies heavily on the coffee industry. However, due to corruption and bribery, there has been a rise in unpaid labor. 
-              In order to combat this, ChainBytes has teamed up with Lehigh University in order to develop an application that utilizes blockchain technology
-              to uphold Fair Trade standards in the coffee industry. Our goal is to make the payment process of workers more transparent, so corporations, 
-              as well as customers, can buy coffee without worrying about its integrity.
-            </p>
+    </section>
+    <section class="contentScroll">
+      <div class="flexRow">
+        <div class="Verified-Dashboard" style="flex: 1; flex-grow: 1;" id="root"></div>
+        <div style="flex: 1; flex-grow: 1;">
+          <div class="center dashboard">
+            <div class="content">
+              <div style="text-align: center">
+                <p class="header">About </p>
+                <p class="header" style="color:#192841;"> ChainBytes </p>
+                <p class="header" style="color:black;"> X </p>
+                <p class="header" style="color:#453124;"> Lehigh</p>
+                <p>
+                  El Salvador’s economy relies heavily on the coffee industry. However, due to corruption and bribery,
+                  there
+                  has
+                  been a rise in unpaid labor.
+                  In order to combat this, ChainBytes has teamed up with Lehigh University in order to develop an
+                  application
+                  that utilizes blockchain technology
+                  to uphold Fair Trade standards in the coffee industry. Our goal is to make the payment process of
+                  workers
+                  more
+                  transparent, so corporations,
+                  as well as customers, can buy coffee without worrying about its integrity.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-  </body>
+  </div>
+</body>
 
-  <script>
-    let slideIndex = 0;
-    showSlides();
-    
-    function showSlides() {
-      let i;
-      let slides = document.getElementsByClassName("photoSlide");
-      let dots = document.getElementsByClassName("dot");
-      for (i = 0; i < slides.length; i++) { 
-        slides[i].style.display = "none";  
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}    
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex-1].style.display = "block";  
-      dots[slideIndex-1].className += " active";
-      setTimeout(showSlides, 3000); // Change image every 3 seconds
+<script>
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("photoSlide");
+    let dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
     }
-    </script>
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "flex";
+    dots[slideIndex - 1].className += " active";
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
+  }
+</script>
+
 </html>
 
 <style>
