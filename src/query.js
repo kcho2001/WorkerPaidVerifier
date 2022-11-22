@@ -8,3 +8,14 @@ export const GET_DAYS_UNPAID = gql`
     }
   }
 `;
+
+export const GET_PAYMENTS = gql`
+  query {
+    payments {
+      id
+      year
+      month
+      day
+    }
+  }
+`;
