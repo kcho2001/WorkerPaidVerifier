@@ -28,32 +28,7 @@ code {
   justify-self: center;
   align-self: center;
   font-size: larger;
-  /* padding-left: 50px;
-  padding-right: 50px; */
 }
-
-.background {
-  width: 75%;
-  height: 90%;
-  justify-self: center;
-  align-self: center;
-  background-color: white;
-  border-radius: 20%;
-}
-
-.content {
-  padding: 3%;
-  margin: 5%;
-  display: flex;
-  flex-direction: column;
-  /* justify-self: center; */
-}
-
-/* p.header {
-  text-align: center;
-  font-weight: bolder;
-  text-decoration: underline;
-} */
 
 div.contentRow {
   display: inline-flex;
@@ -71,9 +46,19 @@ p.text {
   font-weight: bold;
 }
 
-/* p.inline {
-  flex: 1;
-} */
+p.red {
+  display: inline-block;
+  font-weight: bold;
+  font-size: large;
+  color: red;
+}
+
+p.green {
+  display: inline-block;
+  font-weight: bold;
+  font-size: large;
+  color: green;
+}
 
 a {
   height: 100px;
