@@ -32,7 +32,7 @@ code {
   padding-right: 50px; */
 }
 
-.content {
+.background {
   width: 75%;
   height: 90%;
   justify-self: center;
@@ -41,20 +41,44 @@ code {
   border-radius: 20%;
 }
 
+.content {
+  padding: 3%;
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
+  /* justify-self: center; */
+}
+
 /* p.header {
   text-align: center;
   font-weight: bolder;
   text-decoration: underline;
 } */
 
+div.contentRow {
+  display: inline-flex;
+  justify-items: left;
+}
+
+img.iconImage {
+  width: 100px;
+  height: 100px;
+  /* display: block; */
+}
+
 p.text {
   text-align: left;
   font-weight: bold;
 }
 
-p.inline {
-  display: inline-block;
-  text-align: left;
+/* p.inline {
+  flex: 1;
+} */
+
+a {
+  height: 100px;
+  width: 100px;
+  border-radius: 20%;
 }
 
 p.header {
@@ -62,5 +86,4 @@ p.header {
   text-align: center;
   font-weight: bolder;
   font-size: larger;
-  text-decoration: underline;
 }
