@@ -1,5 +1,7 @@
 import { gql } from "@apollo/client";
 
+// GraphQL style queries that will hit theGraph for necessary information
+
 export const GET_DAYS_UNPAID = gql`
   query {
     workers {
