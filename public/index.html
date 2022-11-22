@@ -29,10 +29,12 @@
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
-  <!-- Section will set the layout of the HTML to be in a grid format -->
+  <!-- Using flex container to create a column structure to children -->
   <div
     style="flex-direction: column; display: flex; background-color: #1C2E4A; scroll-snap-type: y proximity; height: 100vh; overflow-y: scroll;">
+    <!-- Further division into two overarching sections that can be "snapped" onto through scrolling -->
     <section style="scroll-snap-align: start; height:100%">
+      <!-- Header portion -->
       <div class="Header" style="flex: 1">
         <div style="height:100%; border-width: 20px;">
           <p class="header-text" style="color:#192841; margin-left: 20px;">ChainBytes </p>
@@ -41,10 +43,10 @@
         </div>
       </div>
       <div style="flex: 1;">
+        <!-- Fullscreen photo carousel portion -->
         <div class="Photos" style="background-color: black;">
-          <!-- <div class="slideshow-container"> -->
           <div class="slideshow-container">
-            <!-- TODO: Add modified versions of pictures so resolution comes out good for phone usage -->
+            <!-- TODO: Add modified versions of pictures so resolution of picture doesn't get distorted when width is smaller -->
             <picture class="photoSlide fade">
               <source media="(min-width: 400px)" srcset="" alt="">
               <img src="photos/1.jpg" class="fullscreen" alt="">
@@ -70,8 +72,6 @@
             </picture>
           </div>
 
-
-
           <div style="text-align:center; background-color: rgb(82, 81, 81);">
             <span class="dot"></span>
             <span class="dot"></span>
@@ -84,9 +84,12 @@
         </div>
       </div>
     </section>
+    <!-- Bottom section portion with verified dashboard and about-us -->
     <section class="contentScroll">
       <div class="flexRow">
+        <!-- Verified-Dashboard div that gets directly overwritten by Javascript -->
         <div class="Verified-Dashboard" style="flex: 1; flex-grow: 1;" id="root"></div>
+        <!-- About us portion -->
         <div style="flex: 1; flex-grow: 1;">
           <div class="center dashboard">
             <div class="content">
@@ -97,17 +100,10 @@
                 <p class="header" style="color:#453124;"> Lehigh</p>
                 <p>
                   El Salvador’s economy relies heavily on the coffee industry. However, due to corruption and bribery,
-                  there
-                  has
-                  been a rise in unpaid labor.
-                  In order to combat this, ChainBytes has teamed up with Lehigh University in order to develop an
-                  application
-                  that utilizes blockchain technology
-                  to uphold Fair Trade standards in the coffee industry. Our goal is to make the payment process of
-                  workers
-                  more
-                  transparent, so corporations,
-                  as well as customers, can buy coffee without worrying about its integrity.
+                  there has been a rise in unpaid labor. In order to combat this, ChainBytes has teamed up with Lehigh
+                  University in order to develop an application that utilizes blockchain technology to uphold Fair Trade
+                  standards in the coffee industry. Our goal is to make the payment process of workers more transparent,
+                  so corporations, as well as customers, can buy coffee without worrying about its integrity.
                 </p>
               </div>
             </div>
@@ -118,6 +114,7 @@
   </div>
 </body>
 
+<!-- Script to operate photo carousel, as well as moving dots -->
 <script>
   let slideIndex = 0;
   showSlides();
@@ -141,7 +138,3 @@
 </script>
 
 </html>
-
-<style>
-
-</style>
