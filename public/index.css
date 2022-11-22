@@ -13,7 +13,7 @@ code {
     monospace;
 }
 
-/* Slideshow container */
+/* Container that encapsulates all of the photoSlides (imgs) */
 .slideshow-container {
   max-width: 100vw;
   min-width: 0;
@@ -40,7 +40,6 @@ img.fullscreen {
   height: 85vh;
   opacity: .5;
   flex: 1;
-  /* display: block; */
 }
 
 .photo-text {
@@ -63,13 +62,11 @@ img.fullscreen {
 
 .Verified-Dashboard {
   position: relative;
-  /* height: 100%; */
   width: 50%;
 }
 
 .About-Us {
   position: relative;
-  /* height: 100%; */
   width: 50%;
 }
 
@@ -119,6 +116,8 @@ img.fullscreen {
   flex-direction: row;
 }
 
+/* This is to adjust how the components are structured and styled depending on if the
+    screen's max-width is 1000px or less. This should cover most phone dimensions */
 @media only screen and (max-width: 1000px) {
   img.fullscreen {
     width: 100%;
@@ -180,8 +179,6 @@ img:hover {
   justify-self: center;
   align-self: center;
   font-size: larger;
-  /* padding-left: 50px;
-  padding-right: 50px; */
 }
 
 .content {
@@ -191,4 +188,8 @@ img:hover {
   align-self: center;
   background-color: white;
   border-radius: 20%;
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
+  padding: 3%;
 }
