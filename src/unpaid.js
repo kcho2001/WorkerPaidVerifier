@@ -2,26 +2,43 @@ import "./index.css";
 
 export function Unpaid(props) {
   return (
-    <div className="center">
-      <div className="dashboard">
-        <p className="header">Workers have not been adequately paid!</p>
-        <div>
+    <div className="center dashboard">
+      <div className="content">
+        <p className="header"> Verification Dashboard</p>
+
+        {/* Setting up icon of Etherscan as a link to the blockexplorer */}
+        <div style={{ justifyContent: "center", flexDirection: "column" }}>
           <a href="https://goerli.etherscan.io/address/0xD260302a241A2CFBc1493676b4fA3f365870De59">
-            Blockexplorer
+            <img src="photos/etherscan-logo-circle.png" className="iconImage" />
           </a>
+          <p style={{ margin: 0, fontSize: "small" }}>
+            Verify Information
+          </p>
         </div>
-        <div>
-          <p className="text inline"> Total number of workers: </p>{" "}
-          <p className="text inline"> {props.workerLength} </p>
+
+        {/* Stating workers have not been paid sufficiently */}
+        <div className="contentRow" style={{ justifyContent: "center" }}>
+          <p className="red"> Workers have not been sufficiently paid</p>
         </div>
-        <div>
-          <p className="text inline">
-            Most days a worker hasn't been paid for work is:{" "}
-          </p>{" "}
-          <p className="text inline">{props.maxUnpaid} </p>{" "}
-          <p className="text inline"> days</p>
+
+        {/* Stating when workers have been paid last */}
+        <div className="contentRow">
+          <p className="text">
+            Workers have been paid last: {props.recentPayment.month}/{props.recentPayment.day}/{props.recentPayment.year}
+          </p>
         </div>
-        <div></div>
+
+        {/* Stating the most unpaid work days */}
+        <div className="contentRow">
+          <p className="text">
+            Most unpaid work days: &nbsp;{props.maxUnpaid} days
+          </p>
+        </div>
+
+        {/* Stating total number workers */}
+        <div className="contentRow">
+          <p className="text"> Total number of workers:&nbsp; {props.workerLength}</p>
+        </div>
       </div>
     </div>
   );
