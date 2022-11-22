@@ -7,6 +7,11 @@ import { Paid } from "./paid.js";
 import { Unpaid } from "./unpaid.js";
 import useWindowDimensions from "./hooks/windowDimensions";
 
+/** 
+ * @param workers The array of workers that was queried from theGraph
+ * @param setMaxUnpaid Set state hook that allows the function to set the longest a worker hasn't been paid in days
+ * @returns true if all workers have less than 14 daysUnpaid: daysUnpaid = days worked, but not paid for
+*/
 function checkPaidStatus(workers, setMaxUnpaid) {
   let _maxUnpaid = 0;
   let paidStatus = true;
@@ -15,7 +20,7 @@ function checkPaidStatus(workers, setMaxUnpaid) {
     // The application should not return a verified paid page
     if (worker.daysUnpaid > _maxUnpaid) {
       _maxUnpaid = worker.daysUnpaid;
-      console.log("greater " + _maxUnpaid);
+      // console.log("greater " + _maxUnpaid);
     }
     if (worker.daysUnpaid >= 14) {
       paidStatus = false;
@@ -25,7 +30,12 @@ function checkPaidStatus(workers, setMaxUnpaid) {
   return paidStatus;
 }
 
+/**
+ * @param dates The list of dates of payments that was queried from theGraph
+ * @returns Object with year, month, and day keys that hold the values of the most recent payment
+ */
 function getLongestUnpaid(dates) {
+  // TODO: Add check to see if most recent payment was within a certain time period
   let mostRecentDate = 0;
   for (let date of dates) {
     let currDate = date.year;
@@ -37,7 +47,6 @@ function getLongestUnpaid(dates) {
       currDate += "0";
     }
     currDate += date.day.toString();
-    console.log("currdate is: " + currDate);
     if (parseInt(currDate) > mostRecentDate) {
       mostRecentDate = parseInt(currDate);
     }
@@ -54,22 +63,23 @@ function App() {
   const [recentPayment, setRecentPayment] = React.useState({});
   const { height, width } = useWindowDimensions();
 
+  // Query of all workers and their id + daysUnpaid
   const { loading, error, data } = useQuery(GET_DAYS_UNPAID, {
     onCompleted: (data) => {
-      // setWorkers(data.checkIns);
       setPaid(checkPaidStatus(data.workers, setMaxUnpaid));
     },
   });
 
-  const { loading2, error2, data2 } = useQuery(GET_PAYMENTS, {
+  // Query for all payments
+  const { loading2, error2, } = useQuery(GET_PAYMENTS, {
     onCompleted: (data) => {
-      // setWorkers(data.checkIns);
       setRecentPayment(getLongestUnpaid(data.payments));
     },
   });
 
   return (
     <>
+      {/* If the queries are not finished yet, return a spinning animation where verification dashboard is */}
       {(loading || loading2) && (
         <div>
           <ColorRing
@@ -83,14 +93,17 @@ function App() {
           />
         </div>
       )}
+      {/* If an error occurred during any of the queries... */}
       {(error || error2) && (
         <div>
           <p>Error retrieving data: {error.message}</p>
         </div>
       )}
+      {/* When finished loading, and no errors exist, but the workers have not been paid, display Unpaid screen */}
       {!error && !loading && !loading2 && !error2 && !paid && (
         <Unpaid maxUnpaid={maxUnpaid} workerLength={data.workers.length} recentPayment={recentPayment} />
       )}
+      {/* When finished loading, and no errors exist, and the workers have been paid, display Paid screen */}
       {!error && !loading && !loading2 && !error2 && paid && (
         <Paid maxUnpaid={maxUnpaid} workerLength={data.workers.length} recentPayment={recentPayment} />
       )}
