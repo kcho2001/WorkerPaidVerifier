@@ -30,8 +30,7 @@
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <!-- Using flex container to create a column structure to children -->
-  <div
-    style="flex-direction: column; display: flex; background-color: #1C2E4A; scroll-snap-type: y proximity; height: 100vh; overflow-y: scroll;">
+  <div class="scrollSnap">
     <!-- Further division into two overarching sections that can be "snapped" onto through scrolling -->
     <section style="scroll-snap-align: start; height:100%">
       <!-- Header portion -->
@@ -41,6 +40,7 @@
           <p class="header-text" style="color:black;"> X </p>
           <p class="header-text" style="color:#453124;"> Lehigh</p>
         </div>
+        <!-- <button type="button" onclick="alert('Navigate to versions')">Versions </button> -->
       </div>
       <div style="flex: 1;">
         <!-- Fullscreen photo carousel portion -->
@@ -48,26 +48,26 @@
           <div class="slideshow-container">
             <!-- TODO: Add modified versions of pictures so resolution of picture doesn't get distorted when width is smaller -->
             <picture class="photoSlide fade">
-              <source media="(min-width: 400px)" srcset="" alt="">
+              <source media="(max-width: 1000px)" class="fullscreen" srcset="photos/phone1.jpg" alt="">
               <img src="photos/1.jpg" class="fullscreen" alt="">
             </picture>
             <picture class="photoSlide fade">
-              <source media="(max-width: 400px)" srcset="" alt="">
+              <source media="(max-width: 1000px)" class="fullscreen" srcset="photos/phone2.jpeg" alt="">
               <img src="photos/2.jpeg" class="fullscreen">
             </picture>
 
             <picture class="photoSlide fade">
-              <source media="(max-width: 400px)" srcset="" alt="">
+              <source media="(max-width: 1000px)" class="fullscreen" srcset="photos/phone3.jpg" alt="">
               <img src="photos/3.jpg" class="fullscreen">
             </picture>
 
             <picture class="photoSlide fade">
-              <source media="(max-width: 400px)" srcset="" alt="">
+              <source media="(max-width: 1000px)" class="fullscreen" srcset="photos/phone4.png" alt="">
               <img src="photos/4.png" class="fullscreen">
             </picture>
 
             <picture class="photoSlide fade">
-              <source media="(max-width: 400px)" srcset="" alt="">
+              <source media="(max-width: 1000px)" class="fullscreen" srcset="photos/phone5.png" alt="">
               <img src="photos/5.png" class="fullscreen">
             </picture>
           </div>
