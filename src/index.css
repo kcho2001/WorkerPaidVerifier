@@ -72,3 +72,21 @@ p.header {
   font-weight: bolder;
   font-size: larger;
 }
+
+@media only screen and (max-width: 1000px) {
+  p.header {
+    display: inline-block;
+    text-align: center;
+    font-weight: bolder;
+    font-size: large;
+  }
+
+  .dashboard {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    justify-self: center;
+    align-self: center;
+    font-size: larger;
+  }
+}
