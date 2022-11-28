@@ -39,14 +39,16 @@
           <p class="header-text" style="color:#192841; margin-left: 20px;">ChainBytes </p>
           <p class="header-text" style="color:black;"> X </p>
           <p class="header-text" style="color:#453124;"> Lehigh</p>
+          <button style="background-color: aliceblue; float: right;" type="button" id="versionButton">Versions
+          </button>
         </div>
-        <!-- <button type="button" onclick="alert('Navigate to versions')">Versions </button> -->
       </div>
       <div style="flex: 1;">
         <!-- Fullscreen photo carousel portion -->
         <div class="Photos" style="background-color: black;">
           <div class="slideshow-container">
-            <!-- TODO: Add modified versions of pictures so resolution of picture doesn't get distorted when width is smaller -->
+            <!-- Pictures are set up like this to account for different size widths that will use different pictures with dimensions
+            that will better fit the screen. If not done like this, the photos will come out distorted for phone screens -->
             <picture class="photoSlide fade">
               <source media="(max-width: 1000px)" class="fullscreen" srcset="photos/phone1.jpg" alt="">
               <img src="photos/1.jpg" class="fullscreen" alt="">
@@ -135,6 +137,12 @@
     dots[slideIndex - 1].className += " active";
     setTimeout(showSlides, 3000); // Change image every 3 seconds
   }
+</script>
+
+<script type="text/javascript">
+  document.getElementById("versionButton").onclick = function () {
+    location.href = "versions.html";
+  };
 </script>
 
 </html>

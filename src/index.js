@@ -5,12 +5,13 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-// Initialize Apollo Client
+// Initialize Apollo Client, which will let us make graphQL queries to theGraph
 export const client = new ApolloClient({
   uri: "https://api.thegraph.com/subgraphs/name/jossduff/coffee-subgraph",
   cache: new InMemoryCache(),
 });
 
+// At the HTML element with id="root", render the app with ApolloProvider
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>

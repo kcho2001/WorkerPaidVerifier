@@ -116,6 +116,59 @@ img.fullscreen {
   flex-direction: row;
 }
 
+.scrollSnap {
+  flex-direction: column;
+  display: flex;
+  background-color: #1C2E4A;
+  scroll-snap-type: y proximity;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.contentScroll {
+  scroll-snap-align: start;
+  height: 100%;
+}
+
+/* Allows associated dot to be put as active when picture is up */
+.active {
+  background-color: #717171;
+}
+
+img:hover {
+  opacity: 0.8;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+}
+
+.dashboard {
+  width: 100%;
+  height: 80vh;
+  position: relative;
+  justify-self: center;
+  align-self: center;
+  font-size: larger;
+}
+
+.content {
+  width: 75%;
+  height: 90%;
+  justify-self: center;
+  align-self: center;
+  background-color: white;
+  border-radius: 20%;
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
+  padding: 3%;
+}
+
 /* This is to adjust how the components are structured and styled depending on if the
     screen's max-width is 1000px or less. This should cover most phone dimensions */
 @media only screen and (max-width: 1000px) {
@@ -185,57 +238,4 @@ img.fullscreen {
     background-color: #1C2E4A;
     height: 100vh;
   }
-}
-
-.scrollSnap {
-  flex-direction: column;
-  display: flex;
-  background-color: #1C2E4A;
-  scroll-snap-type: y proximity;
-  height: 100vh;
-  overflow-y: scroll;
-}
-
-.contentScroll {
-  scroll-snap-align: start;
-  height: 100%;
-}
-
-/* Allows associated dot to be put as active when picture is up */
-.active {
-  background-color: #717171;
-}
-
-img:hover {
-  opacity: 0.8;
-}
-
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 100vh;
-}
-
-.dashboard {
-  width: 100%;
-  height: 80vh;
-  position: relative;
-  justify-self: center;
-  align-self: center;
-  font-size: larger;
-}
-
-.content {
-  width: 75%;
-  height: 90%;
-  justify-self: center;
-  align-self: center;
-  background-color: white;
-  border-radius: 20%;
-  margin: 5%;
-  display: flex;
-  flex-direction: column;
-  padding: 3%;
 }

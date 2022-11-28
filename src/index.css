@@ -73,6 +73,7 @@ p.header {
   font-size: larger;
 }
 
+/* Adjust styles if the screen width is 1000px or less. This is to account for phone screens */
 @media only screen and (max-width: 1000px) {
   p.header {
     display: inline-block;
