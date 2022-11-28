@@ -8,6 +8,8 @@ function getWindowDimensions() {
   };
 }
 
+// This hook is setup so that the other screens know what the size of the current screen is
+// , rendering the screen apropriately
 export default function useWindowDimensions() {
   const [windowDimensions, setWindowDimensions] = useState(
     getWindowDimensions()
