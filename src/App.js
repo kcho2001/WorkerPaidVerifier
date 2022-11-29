@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import { GET_DAYS_UNPAID, GET_PAYMENTS } from "./query";
 import { useQuery } from "@apollo/client";
 import { ColorRing } from "react-loader-spinner";

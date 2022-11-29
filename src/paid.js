@@ -13,7 +13,7 @@ export function Paid(props) {
         {/* Setting up icon of Etherscan as a link to the blockexplorer */}
         <div style={{ justifyContent: "center", flexDirection: "column" }}>
           <a href="https://goerli.etherscan.io/address/0xD260302a241A2CFBc1493676b4fA3f365870De59">
-            <img src="photos/etherscan-logo-circle.png" className="iconImage" />
+            <img src="photos/etherscan-logo-circle.png" className="iconImage" alt="Etherscan Block Explorer" />
           </a>
           <p style={{ margin: 0, fontSize: "small" }}>
             Verify Information
