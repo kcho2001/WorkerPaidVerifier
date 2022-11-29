@@ -236,4 +236,9 @@ img:hover {
   .contentScroll {
     height: 100%;
   }
+
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
 }
