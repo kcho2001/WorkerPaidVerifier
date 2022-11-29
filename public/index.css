@@ -230,6 +230,10 @@ img:hover {
     flex-direction: column;
     display: flex;
     background-color: #1C2E4A;
-    height: 100vh;
+    height: 100%;
+  }
+
+  .contentScroll {
+    height: 100%;
   }
 }
