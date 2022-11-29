@@ -172,6 +172,10 @@ img:hover {
 /* This is to adjust how the components are structured and styled depending on if the
     screen's max-width is 1000px or less. This should cover most phone dimensions */
 @media only screen and (max-width: 1000px) {
+  p {
+    font-size: medium;
+  }
+
   img.fullscreen {
     width: 100%;
     height: 76vh;
@@ -189,27 +193,17 @@ img:hover {
   .Verified-Dashboard {
     position: relative;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
   }
 
   .About-Us {
     position: relative;
     height: 100vh;
-    width: 100vw;
   }
 
   .flexRow {
     display: flex;
     flex-direction: column;
-  }
-
-  .dashboard {
-    width: 100%;
-    height: 80vh;
-    position: relative;
-    justify-self: center;
-    align-self: center;
-    font-size: larger;
   }
 
   .content {
